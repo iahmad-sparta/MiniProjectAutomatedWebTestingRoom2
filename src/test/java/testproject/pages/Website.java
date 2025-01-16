@@ -6,8 +6,11 @@ public class Website {
 
     private WebDriver webDriver;
 
+    private final ContactUsPage contactUsPage;
+
     public Website(WebDriver webDriver) {
         this.webDriver = webDriver;
+        this.contactUsPage = new ContactUsPage(webDriver);
     }
 
     public String getCurrentUrl() {
@@ -16,5 +19,9 @@ public class Website {
 
     public String getPageTitle() {
         return webDriver.getTitle();
+    }
+
+    public ContactUsPage getContactUsPage() {
+        return contactUsPage;
     }
 }

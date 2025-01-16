@@ -12,6 +12,9 @@ public class ContactUsPage {
     private final By contactEmail = By.name("email");
     private final By contactSubject = By.name("subject");
     private final By contactMessage = By.id("message");
+    private final By uploadFile = By.name("uploadFile");
+    private final By submitButton = By.className("submit_form");
+    private final By successMessage = By.className("alert-success");
 
     public ContactUsPage(WebDriver driver) {
         this.webDriver = driver;
@@ -31,6 +34,18 @@ public class ContactUsPage {
 
     public void enterContactMessage(String contactMessage) {
         this.webDriver.findElement(this.contactMessage).sendKeys(contactMessage);
+    }
+
+    public String getAlertSuccessMessageText() {
+        return this.webDriver.findElement(this.successMessage).getText();
+    }
+
+    public void clickSubmitButton() {
+        this.webDriver.findElement(this.submitButton).click();
+    }
+
+    public void uploadFile(String filePath) {
+        this.webDriver.findElement(this.uploadFile).sendKeys(filePath);
     }
 
     //get the webelements

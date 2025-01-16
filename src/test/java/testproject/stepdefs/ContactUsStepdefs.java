@@ -56,7 +56,7 @@ public class ContactUsStepdefs {
 
     @Then("Your details have been submitted successfully is visible")
     public void yourDetailsHaveBeenSubmittedSuccessfullyIsVisible() {
-        MatcherAssert.assertThat(this.website.getContactUsPage().getAlertSuccessMessageText(), Matchers.containsString("Success!"));
+        MatcherAssert.assertThat(this.website.getContactUsPage().getAlertSuccessMessageText(), Matchers.equalTo("Success! Your details have been submitted successfully."));
     }
 
 }

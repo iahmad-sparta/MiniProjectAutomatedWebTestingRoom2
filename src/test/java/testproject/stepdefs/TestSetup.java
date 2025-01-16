@@ -1,5 +1,6 @@
 package testproject.stepdefs;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,9 +12,12 @@ import java.io.IOException;
 
 public class TestSetup {
 
+//    private static final String DRIVER_LOCATION = "/usr/local/bin/chromedriver";
     private static final String DRIVER_LOCATION = "src/test/resources/chromedriver.exe";
     private static ChromeDriverService service;
     private static WebDriver webDriver;
+
+    private static Website website;
 
     public static void startChromeService() throws IOException {
         service = new ChromeDriverService.Builder()
@@ -25,6 +29,7 @@ public class TestSetup {
 
     public static void createWebDriver() {
         webDriver = new RemoteWebDriver(service.getUrl(), getChromeOptions());
+        website = new Website(webDriver);
     }
 
     public static ChromeOptions getChromeOptions() {
@@ -44,7 +49,19 @@ public class TestSetup {
     }
 
     static Website getWebsite(String url) {
-        webDriver.get(url);
-        return new Website(webDriver);
+        website.goToPage(url);
+        By button = new By.ByXPath("/html/body/div/div[2]/div[2]/div[2]/div[2]/button[1]");
+        try{
+
+            webDriver.findElement(button).click();
+        } catch (Exception e) {
+            System.out.println("No button found");
+        }
+
+        return website;
+    }
+
+    public static Website getWebsite() {
+        return website;
     }
 }

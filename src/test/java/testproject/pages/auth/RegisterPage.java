@@ -8,27 +8,29 @@ public class RegisterPage {
     private WebDriver webDriver;
 
 //    Personal Information
-    private By title;
-    private By name;
-    private By email;
-    private By password;
-    private By day;
-    private By month;
-    private By year;
+    private By title = new By.ByXPath("//*[@id='form']/div/div/div/div/form/div[1]");
+    private By name = new By.ById("name");
+//    private By email = new By.ById("email");
+    private By password = new By.ById("password");
+    private By day = new By.ById("days");
+    private By month = new By.ById("months");
+    private By year = new By.ById("years");
 //    private By newsletter;
 //    private By specialOffers;
 
 //    Address
-    private By firstName;
-    private By lastName;
-    private By company;
-    private By address1;
-    private By address2;
-    private By country;
-    private By state;
-    private By city;
-    private By postcode;
-    private By mobileNumber;
+    private By firstName = new By.ById("first_name");
+    private By lastName = new By.ById("last_name");
+    private By company = new By.ById("company");
+    private By address1 = new By.ById("address1");
+    private By address2 = new By.ById("address2");
+    private By country = new By.ById("country");
+    private By state = new By.ById("state");
+    private By city = new By.ById("city");
+    private By zipcode = new By.ById("zipcode");
+    private By mobileNumber = new By.ById("mobile_number");
+
+    private By registerButton = new By.ByXPath("//*[@id=\"form\"]/div/div/div/div/form/button");
 
     public RegisterPage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -44,9 +46,9 @@ public class RegisterPage {
         webDriver.findElement(this.name).sendKeys(name);
     }
 
-    public void enterEmail(String email) {
-        webDriver.findElement(this.email).sendKeys(email);
-    }
+//    public void enterEmail(String email) {
+//        webDriver.findElement(this.email).sendKeys(email);
+//    }
 
     public void enterPassword(String password) {
         webDriver.findElement(this.password).sendKeys(password);
@@ -104,12 +106,16 @@ public class RegisterPage {
         webDriver.findElement(this.city).sendKeys(city);
     }
 
-    public void enterPostcode(String postcode) {
-        webDriver.findElement(this.postcode).sendKeys(postcode);
+    public void enterZipcode(String zipcode) {
+        webDriver.findElement(this.zipcode).sendKeys(zipcode);
     }
 
     public void enterMobileNumber(String mobileNumber) {
         webDriver.findElement(this.mobileNumber).sendKeys(mobileNumber);
+    }
+
+    public void clickRegister() {
+        webDriver.findElement(this.registerButton).click();
     }
 
 }

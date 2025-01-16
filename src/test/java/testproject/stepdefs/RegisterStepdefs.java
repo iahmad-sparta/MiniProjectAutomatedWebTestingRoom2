@@ -41,12 +41,12 @@ public class RegisterStepdefs {
 
     @And("I enter the email {string}")
     public void iEnterTheEmail(String arg0) {
-        website.getLoginPage().enterRegEmail(arg0);
+        website.getLoginPage().enterEmailLogin(arg0);
     }
 
     @When("I click Signup")
     public void iClickSignup() {
-        website.getLoginPage().clickSignup();
+        website.getLoginPage().clickSignUpButton();
     }
 
     @Then("I go to the Signup Page")

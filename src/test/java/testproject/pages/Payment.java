@@ -26,6 +26,10 @@ public class Payment {
     }
 
     public void enterCard(String nameOnCard,String cardNumber,String cvc,String expiryMonth,String expiryYear) {
+
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        WebElement inputField = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Consent']")));
+        inputField.click();
         webDriver.findElement(this.nameOnCard).sendKeys(nameOnCard);
         webDriver.findElement(this.cardNumber).sendKeys(cardNumber);
         webDriver.findElement(this.cvc).sendKeys(cvc);

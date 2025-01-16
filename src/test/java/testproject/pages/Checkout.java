@@ -1,6 +1,7 @@
 package testproject.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,7 +22,7 @@ public class Checkout {
     private By countryLocator = By.className("address_country_name");
     private By phoneLocator = By.className("address_phone");
 
-    private By placeOrderButton = By.cssSelector("a.btn.btn-default.check_out");
+    private By placeOrderButtonLocator = By.cssSelector("a.btn.btn-default.check_out[href='/payment']");
 
     public Checkout(WebDriver driver) {
         this.driver = driver;
@@ -42,6 +43,8 @@ public class Checkout {
     }
 
     public void clickPlaceOrderButton() {
-        driver.findElement(placeOrderButton).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement placeOrderButton = wait.until(ExpectedConditions.visibilityOfElementLocated(placeOrderButtonLocator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", placeOrderButton);
     }
 }

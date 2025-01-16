@@ -9,7 +9,7 @@ Feature: Register
 
   Scenario: Registering a New User
     Given I am on the Singup Page
-      And I fill in the personal information
-      And I fill in the address information
+    And I fill in the personal information
+    And I fill in the address information
     When I click Create Account
     Then The account has been created

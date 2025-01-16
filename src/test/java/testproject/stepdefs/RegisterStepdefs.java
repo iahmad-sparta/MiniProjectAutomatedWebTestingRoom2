@@ -55,11 +55,12 @@ public class RegisterStepdefs {
 
     @Given("I am on the Singup Page")
     public void iAmOnTheSingupPage() {
-
+        this.website = TestSetup.getWebsite(BASE_URL + "signup");
     }
 
     @And("I fill in the personal information")
     public void iFillInThePersonalInformation() {
+
     }
 
     @And("I fill in the address information")

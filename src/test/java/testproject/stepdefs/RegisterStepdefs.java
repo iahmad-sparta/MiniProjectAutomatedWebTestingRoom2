@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class RegisterStepdefs {
     private Website website;
-    private static final String BASE_URL = "https://www.saucedemo.com/";
+    private static final String BASE_URL = "https://automationexercise.com/";
 
     @Before
     public void setup() throws IOException {
@@ -28,10 +28,12 @@ public class RegisterStepdefs {
 
     @Given("I am on the Login Page")
     public void iAmOnTheLoginPage() {
+
     }
 
     @And("I enter the name {string}")
     public void iEnterTheName(String arg0) {
+
     }
 
     @And("I enter the email {string}")

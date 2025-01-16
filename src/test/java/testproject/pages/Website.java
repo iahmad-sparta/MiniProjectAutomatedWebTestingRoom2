@@ -9,19 +9,13 @@ public class Website {
     private final WebDriver webDriver;
     private final HomePage homePage;
     private final ProductsPage productsPage;
+    private final ContactUsPage contactUsPage;
 
     public Website(WebDriver webDriver) {
         this.webDriver = webDriver;
-        homePage = new HomePage(webDriver);
-        productsPage = new ProductsPage(webDriver);
-    }
-
-    private ProductsPage getProductsPage() {
-        return productsPage;
-    }
-
-    public HomePage getHomePage(){
-        return homePage;
+        this.homePage = new HomePage(webDriver);
+        this.productsPage = new ProductsPage(webDriver);
+        this.contactUsPage = new ContactUsPage(webDriver);
     }
 
     public String getCurrentUrl() {
@@ -34,5 +28,17 @@ public class Website {
 
     public WebElement findElement(By by) {
         return webDriver.findElement(by);
+    }
+
+    public HomePage getHomePage() {
+        return homePage;
+    }
+
+    public ProductsPage getProductsPage() {
+        return productsPage;
+    }
+
+    public ContactUsPage getContactUsPage() {
+        return contactUsPage;
     }
 }

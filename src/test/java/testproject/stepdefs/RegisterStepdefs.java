@@ -1,11 +1,31 @@
 package testproject.stepdefs;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import testproject.pages.Website;
+
+import java.io.IOException;
 
 public class RegisterStepdefs {
+    private Website website;
+    private static final String BASE_URL = "https://www.saucedemo.com/";
+
+    @Before
+    public void setup() throws IOException {
+        TestSetup.startChromeService();
+        TestSetup.createWebDriver();
+    }
+
+    @After
+    public void afterEach() {
+        TestSetup.quitWebDriver();
+        TestSetup.stopService();
+    }
+
     @Given("I am on the Login Page")
     public void iAmOnTheLoginPage() {
     }

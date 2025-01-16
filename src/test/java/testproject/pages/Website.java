@@ -34,9 +34,6 @@ public class Website {
 
     }
 
-
-
-
     public String getCurrentUrl() {
         return webDriver.getCurrentUrl();
     }
@@ -76,5 +73,8 @@ public class Website {
     public LoginPage getLoginPage() {
         return loginPage;
     }
-}
 
+    public void goToPage(String URL) {
+        webDriver.get(URL);
+    }
+}

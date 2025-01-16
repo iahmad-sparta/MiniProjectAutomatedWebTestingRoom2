@@ -20,6 +20,7 @@ public class LoginPage {
     }
 
     public void enterEmailLogin(String email) {
+        System.out.println(webDriver.getCurrentUrl());
         webDriver.findElement(emailFieldLogin).sendKeys(email);
     }
 

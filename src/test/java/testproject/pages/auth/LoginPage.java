@@ -6,13 +6,13 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
     private WebDriver webDriver;
 
-    private By emailFieldLogin;
-    private By password;
-    private By loginButton;
+    private By emailFieldLogin = new By.ByXPath("//*[@id=\"form\"]/div/div/div[1]/div/form/input[2]");
+    private By password = new By.ByXPath("//*[@id=\"form\"]/div/div/div[1]/div/form/input[3]");
+    private By loginButton = new By.ByXPath("//*[@id=\"form\"]/div/div/div[1]/div/form/button");
 
-    private By nameField;
-    private By emailFieldSignup;
-    private By signUpButton;
+    private By nameField = new By.ByXPath("//*[@id=\"form\"]/div/div/div[3]/div/form/input[2]");
+    private By emailFieldSignup = By.cssSelector("[data-qa='signup-email']");
+    private By signUpButton = By.cssSelector("[data-qa='signup-button']");
 
 
     public LoginPage(WebDriver webDriver) {

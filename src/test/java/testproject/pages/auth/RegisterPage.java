@@ -35,6 +35,9 @@ public class RegisterPage {
     }
 
     public void selectTitle(String title) {
+        WebElement titleOptions = webDriver.findElement(this.title);
+        titleOptions.click();
+        titleOptions.findElement(By.xpath("//input[@value='" + title + "']")).click();
     }
 
     public void enterName(String name) {

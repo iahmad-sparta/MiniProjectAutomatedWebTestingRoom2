@@ -3,30 +3,34 @@ package testproject.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
 
+
+
 public class Website {
 
-    private WebDriver webDriver;
+    private final WebDriver webDriver;
+    private final HomePage homePage;
+    private final ProductsPage productsPage;
+    private final ContactUsPage contactUsPage;
     private Cart cart;
     private Checkout checkout;
     private Payment payment;
 
-    private By addToCartButtonLocator = By.cssSelector("a.btn.btn-default.add-to-cart[data-product-id='1']");
-    private By cartButtonLocator = By.cssSelector("a[href='/view_cart']");
-    private By continueShoppingButtonLocator = By.cssSelector("button.btn.btn-success.close-modal.btn-block[data-dismiss='modal']");
-
-
-
     public Website(WebDriver webDriver) {
         this.webDriver = webDriver;
+        this.homePage = new HomePage(webDriver);
+        this.productsPage = new ProductsPage(webDriver);
+        this.contactUsPage = new ContactUsPage(webDriver);
         cart = new Cart(webDriver);
         checkout =  new Checkout(webDriver);
         payment = new Payment(webDriver);
+
     }
 
 
@@ -51,4 +55,21 @@ public class Website {
     public Payment getPayment() {
         return payment;
     }
+
+    public WebElement findElement(By by) {
+        return webDriver.findElement(by);
+    }
+
+    public HomePage getHomePage() {
+        return homePage;
+    }
+
+    public ProductsPage getProductsPage() {
+        return productsPage;
+    }
+
+    public ContactUsPage getContactUsPage() {
+        return contactUsPage;
+    }
 }
+

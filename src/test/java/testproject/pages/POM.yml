@@ -1,0 +1,32 @@
+Website:
+  attributes:
+    - driver: WebDriver
+    - loginPage: LoginPage
+    - homePage: HomePage
+    - productsPage: ProductsPage
+    - cartPage: CartPage
+    - checkoutPage: CheckoutPage
+  methods:
+    - getLoginPage(): LoginPage
+    - getHomePage(): HomePage
+    - getProductsPage(): ProductsPage
+    - getCartPage(): CartPage
+    - getCheckoutPage(): CheckoutPage
+
+PageObjects:
+  - LoginPage:
+      description: >
+        Handles user login functionality.
+      attributes:
+        - emailField: WebElement
+        - passwordField: WebElement
+        - loginButton: WebElement
+      methods:
+        - enterEmail(email): void
+        - enterPassword(password): void
+        - clickLogin(): void
+  - HomePage:
+      description: >
+
+  - ProductsPage:
+

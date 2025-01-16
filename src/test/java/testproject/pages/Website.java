@@ -3,13 +3,12 @@ package testproject.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import testproject.pages.auth.LoginPage;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-
-
 
 
 public class Website {
@@ -18,6 +17,7 @@ public class Website {
     private final HomePage homePage;
     private final ProductsPage productsPage;
     private final ContactUsPage contactUsPage;
+    private final LoginPage loginPage;
     private Cart cart;
     private Checkout checkout;
     private Payment payment;
@@ -27,14 +27,12 @@ public class Website {
         this.homePage = new HomePage(webDriver);
         this.productsPage = new ProductsPage(webDriver);
         this.contactUsPage = new ContactUsPage(webDriver);
+        this.loginPage = new LoginPage(webDriver);
         cart = new Cart(webDriver);
         checkout =  new Checkout(webDriver);
         payment = new Payment(webDriver);
 
     }
-
-
-
 
     public String getCurrentUrl() {
         return webDriver.getCurrentUrl();
@@ -71,5 +69,12 @@ public class Website {
     public ContactUsPage getContactUsPage() {
         return contactUsPage;
     }
-}
+    
+    public LoginPage getLoginPage() {
+        return loginPage;
+    }
 
+    public void goToPage(String URL) {
+        webDriver.get(URL);
+    }
+}

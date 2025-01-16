@@ -6,6 +6,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.Matchers;
 import testproject.pages.Website;
 
 import java.io.IOException;
@@ -28,28 +30,32 @@ public class RegisterStepdefs {
 
     @Given("I am on the Login Page")
     public void iAmOnTheLoginPage() {
-
+        this.website = TestSetup.getWebsite(BASE_URL + "login");
     }
 
     @And("I enter the name {string}")
     public void iEnterTheName(String arg0) {
-
+        website.getLoginPage().enterName(arg0);
     }
 
     @And("I enter the email {string}")
     public void iEnterTheEmail(String arg0) {
+        website.getLoginPage().enterRegEmail(arg0);
     }
 
     @When("I click Signup")
     public void iClickSignup() {
+        website.getLoginPage().clickSignup();
     }
 
     @Then("I go to the Signup Page")
     public void iGoToTheSignupPage() {
+        MatcherAssert.assertThat(website.getCurrentUrl(), Matchers.containsString("signup"));
     }
 
     @Given("I am on the Singup Page")
     public void iAmOnTheSingupPage() {
+
     }
 
     @And("I fill in the personal information")

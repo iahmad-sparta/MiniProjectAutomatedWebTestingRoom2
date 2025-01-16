@@ -10,12 +10,14 @@ public class Website {
     private final HomePage homePage;
     private final ProductsPage productsPage;
     private final ContactUsPage contactUsPage;
+    private final LoginPage loginPage;
 
     public Website(WebDriver webDriver) {
         this.webDriver = webDriver;
         this.homePage = new HomePage(webDriver);
         this.productsPage = new ProductsPage(webDriver);
         this.contactUsPage = new ContactUsPage(webDriver);
+        this.loginPage = new LoginPage(webDriver);
     }
 
     public String getCurrentUrl() {
@@ -40,5 +42,9 @@ public class Website {
 
     public ContactUsPage getContactUsPage() {
         return contactUsPage;
+    }
+    
+    public LoginPage getLoginPage() {
+        return loginPage;
     }
 }

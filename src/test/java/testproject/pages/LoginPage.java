@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LoginPage {
     private WebDriver webDriver;
 
-    private By name = new By.ByName("name");
+    private By name = new By.ByXPath("//*[@id=\"form\"]/div/div/div[3]/div/form/input[2]");
     private By email = By.cssSelector("[data-qa='signup-email']");
     private By signupButton = By.cssSelector("[data-qa='signup-button']");
 

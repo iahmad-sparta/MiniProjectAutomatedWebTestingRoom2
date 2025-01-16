@@ -1,5 +1,6 @@
 package testproject.stepdefs;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -45,6 +46,14 @@ public class TestSetup {
 
     static Website getWebsite(String url) {
         webDriver.get(url);
+        By button = new By.ByXPath("/html/body/div/div[2]/div[2]/div[2]/div[2]/button[1]");
+        try{
+
+            webDriver.findElement(button).click();
+        } catch (Exception e) {
+            System.out.println("No button found");
+        }
+
         return new Website(webDriver);
     }
 }

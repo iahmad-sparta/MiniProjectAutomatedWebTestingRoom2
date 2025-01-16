@@ -30,6 +30,7 @@ public class RegisterStepdefs {
 
     @Given("I am on the Login Page")
     public void iAmOnTheLoginPage() {
+
         this.website = TestSetup.getWebsite(BASE_URL + "login");
     }
 

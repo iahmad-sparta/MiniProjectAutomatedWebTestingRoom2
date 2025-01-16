@@ -25,3 +25,8 @@ PageObjects:
         - enterEmail(email): void
         - enterPassword(password): void
         - clickLogin(): void
+  - HomePage:
+      description: >
+
+  - ProductsPage:
+

@@ -23,6 +23,10 @@ public class Checkout {
 
     private By placeOrderButton = By.cssSelector("a.btn.btn-default.check_out");
 
+    public Checkout(WebDriver driver) {
+        this.driver = driver;
+    }
+
     public List<String> getDeliveryAddress() {
         List<String> addressList = new ArrayList<>();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

@@ -2,6 +2,13 @@ package testproject.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Payment {
     private WebDriver webDriver;
@@ -14,12 +21,17 @@ public class Payment {
 
     private By payAndConfirmOrderButton = new By.ById("submit");
 
+    public Payment(WebDriver webDriver) {
+        this.webDriver = webDriver;
+    }
+
     public void enterCard(String nameOnCard,String cardNumber,String cvc,String expiryMonth,String expiryYear) {
         webDriver.findElement(this.nameOnCard).sendKeys(nameOnCard);
         webDriver.findElement(this.cardNumber).sendKeys(cardNumber);
         webDriver.findElement(this.cvc).sendKeys(cvc);
         webDriver.findElement(this.expiryMonth).sendKeys(expiryMonth);
         webDriver.findElement(this.expiryYear).sendKeys(expiryYear);
+
     }
 
     public void clickOnPayAndConfirmOrderButton() {

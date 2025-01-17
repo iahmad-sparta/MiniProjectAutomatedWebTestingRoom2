@@ -7,6 +7,7 @@ import testproject.pages.auth.LoginPage;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import testproject.pages.auth.RegisterPage;
 
 import java.time.Duration;
 
@@ -18,6 +19,7 @@ public class Website {
     private final ProductsPage productsPage;
     private final ContactUsPage contactUsPage;
     private final LoginPage loginPage;
+    private final RegisterPage registerPage;
     private Cart cart;
     private Checkout checkout;
     private Payment payment;
@@ -29,6 +31,7 @@ public class Website {
         this.productsPage = new ProductsPage(webDriver);
         this.contactUsPage = new ContactUsPage(webDriver);
         this.loginPage = new LoginPage(webDriver);
+        this.registerPage = new RegisterPage(webDriver);
         cart = new Cart(webDriver);
         checkout =  new Checkout(webDriver);
         payment = new Payment(webDriver);
@@ -73,6 +76,10 @@ public class Website {
 
     public LoginPage getLoginPage() {
         return loginPage;
+    }
+
+    public RegisterPage getRegisterPage() {
+        return registerPage;
     }
 
     public void goToPage(String URL) {

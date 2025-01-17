@@ -59,7 +59,6 @@ Automated Web Testing
 In this project, we tested a number of features. These tests were priorities based on how urgent we found them using the MOSCOW method. 
 We found that the tests we created, all of them passed to a high degree. Attached is an example test case and the pass result from it.
 
-[//]: # (![image]&#40;https://github.com/user-attachments/assets/ecc95c66-0997-4070-b5cc-91dbb00e7f25&#41;)
 ![image](https://github.com/iahmad-sparta/MiniProjectAutomatedWebTestingRoom2/blob/master/src/test/resources/data/testMetrics.png?raw=true)
 
 In this example screenshot we can see a structured test using the Cucumber language. With all the steps passing in a runtime of 5.1 seconds, we can see our approach is efficient and effective.

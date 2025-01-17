@@ -33,7 +33,6 @@ public class Website {
         checkout =  new Checkout(webDriver);
         payment = new Payment(webDriver);
         this.productPage = new ProductPage(webDriver);
-
     }
 
     public String getCurrentUrl() {
@@ -79,7 +78,6 @@ public class Website {
     public void goToPage(String URL) {
         webDriver.get(URL);
     }
-
     public ProductPage getProductPage() {
         return productPage;
     }

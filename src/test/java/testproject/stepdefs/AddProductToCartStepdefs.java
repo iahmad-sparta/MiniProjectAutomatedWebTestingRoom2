@@ -18,23 +18,23 @@ public class AddProductToCartStepdefs {
     private Website website;
     private static final String BASE_URL = "https://automationexercise.com/products";
     Logger logger = Logger.getLogger(AddProductToCartStepdefs.class.getName());
-    @Before
-    public void setup() throws IOException {
-        TestSetup.startChromeService();
-        TestSetup.createWebDriver();
-
-        this.website = TestSetup.getWebsite(BASE_URL);
-    }
-
-    @After
-    public void afterEach() {
-        TestSetup.quitWebDriver();
-        TestSetup.stopService();
-    }
+//    @Before
+//    public void setup() throws IOException {
+//        TestSetup.startChromeService();
+//        TestSetup.createWebDriver();
+//
+//        this.website = TestSetup.getWebsite(BASE_URL);
+//    }
+//
+//    @After
+//    public void afterEach() {
+//        TestSetup.quitWebDriver();
+//        TestSetup.stopService();
+//    }
 
     @Given("I am on the products page")
     public void iAmOnTheProductsPage() {
-        TestSetup.getWebsite(BASE_URL);
+        website = TestSetup.getWebsite(BASE_URL);
     }
 
     @And("I select a Blue Top")
@@ -49,7 +49,9 @@ public class AddProductToCartStepdefs {
 
     @Then("I should see a popup message showing that the product has been added to cart.")
     public void iShouldSeeAPopupMessageShowingThatTheProductHasBeenAddedToCart() {
-        MatcherAssert.assertThat(website.getProductPage().getAddedProductMessage(), Matchers.not(null));
+        String msg = website.getProductPage().getAddedProductMessage();
+        System.out.println(msg);
+        MatcherAssert.assertThat(website.getProductPage().getAddedProductMessage(), Matchers.containsString("Added"));
     }
 
     @And("I can click continue shopping.")
@@ -57,31 +59,13 @@ public class AddProductToCartStepdefs {
         website.getProductPage().clickContinueShopping();
     }
 
+    @When("I click on cart")
+    public void iClickOnCart() {
+        website.getProductPage().viewShoppingCart();
+    }
+
     @Then("I should be able to view the cart")
     public void iShouldBeAbleToViewTheCart() {
-    }
-
-    @Given("The user has added a second item to cart")
-    public void theUserHasAddedASecondItemToCart() {
-    }
-
-    @And("I select a Men Tshirt.")
-    public void iSelectAMenTshirt() {
-    }
-
-    @Given("The user wants to view the cart.")
-    public void theUserWantsToViewTheCart() {
-    }
-
-    @And("Is in the products page.")
-    public void isInTheProductsPage() {
-    }
-
-    @When("I click the Cart from the navigation menu.")
-    public void iClickTheCartFromTheNavigationMenu() {
-    }
-
-    @Then("I should see the products that were added to the cart")
-    public void iShouldSeeTheProductsThatWereAddedToTheCart() {
+        MatcherAssert.assertThat(website.getCurrentUrl(), Matchers.containsString( "/view_cart"));
     }
 }

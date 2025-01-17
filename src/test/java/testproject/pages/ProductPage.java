@@ -11,13 +11,14 @@ import java.util.List;
 
 public class ProductPage {
     private final WebDriver webDriver;
+    private WebElement modal;
 
     //web elements
     private final By blueTopProduct = new By.ByCssSelector(".col-sm-4:nth-child(3) .product-overlay");
+    private final By menShirtProduct = new By.ByCssSelector(".col-sm-4:nth-child(4) .product-overlay");
 
     public ProductPage(WebDriver driver) {
         this.webDriver = driver;
-//        webDriver.findElement(By.xpath("/html/body/div/div[2]/div[2]/div[2]/div[2]/button[1]")).click();
     }
 
     public void selectBlueTopProduct() {
@@ -26,20 +27,35 @@ public class ProductPage {
         action.moveToElement(product).build().perform();
     }
 
-    public void clickBlueTopProduct() {
-        WebElement product = webDriver.findElement(By.cssSelector(".col-sm-4:nth-child(3) .product-overlay .btn"));
+    public void selectMenShirt() {
+        WebElement product = webDriver.findElement(menShirtProduct);
         Actions action = new Actions(webDriver);
         action.moveToElement(product).build().perform();
     }
 
-    public WebElement getAddedProductMessage() {
-        By button = new By.ByCssSelector("#cartModal");
+    public void clickBlueTopProduct() {
+
+        By button = new By.ByXPath("/html/body/section[2]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/a");
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        WebElement tButton = wait.until(ExpectedConditions.elementToBeClickable(button));
+        tButton.click();
+
+    }
+
+    public void clickMenShirt() {
+        By button = new By.ByXPath("/html/body/section[2]/div/div/div[2]/div[1]/div[3]/div/div[1]/div[1]/a");
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        WebElement tButton = wait.until(ExpectedConditions.elementToBeClickable(button));
+        tButton.click();
+    }
+
+    public String getAddedProductMessage() {
 
         try{
-//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));WebElement address = wait.until(ExpectedConditions.visibilityOfElementLocated(addressSectionLocator));
-            WebDriverWait webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-            WebElement modal = webDriverWait.until(driver -> ExpectedConditions.visibilityOfElementLocated(button)).apply(webDriver);
-            return modal;
+            By popupTitle = new By.ByClassName("modal-title");
+            WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(popupTitle));
+            return webDriver.findElement(popupTitle).getText();
         } catch (Exception e) {
             System.out.println("No modal found");
             return null;
@@ -47,9 +63,15 @@ public class ProductPage {
     }
 
     public void clickContinueShopping() {
-        WebElement continueShoppingButton = webDriver.findElement(By.cssSelector("#cartModal > div > div > div.modal-footer > button"));
-        Actions action = new Actions(webDriver);
-        action.moveToElement(continueShoppingButton).build().perform();
+        By continueShopping = new By.ByCssSelector("#cartModal > div > div > div.modal-footer > button");
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(continueShopping));
+        webDriver.findElement(continueShopping).click();
+    }
+
+    public void viewShoppingCart() {
+        By click_shopping_cart_icon = new By.ByCssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(3) > a");
+        webDriver.findElement(click_shopping_cart_icon).click();
     }
 
     public WebElement getBlueTopProduct() {

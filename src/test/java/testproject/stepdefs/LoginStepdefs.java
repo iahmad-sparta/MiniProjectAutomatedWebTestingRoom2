@@ -36,7 +36,7 @@ public class LoginStepdefs {
 
     @Then("Logged in as Username is visible")
     public void loggedInAsUsernameIsVisible() {
-        MatcherAssert.assertThat(website.getHomePage().getLoggedInAs(), Matchers.containsString("robert"));
+        MatcherAssert.assertThat(website.getHomePage().getLoggedInAs(), Matchers.containsString("Robert"));
     }
 
     @Given("I am logged in")

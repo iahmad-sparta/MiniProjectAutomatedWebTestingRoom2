@@ -21,8 +21,7 @@ public class ContactUsStepdefs {
     public void iAmOnTheContactUsPage()
     {
         System.out.println("I am on the Contact Us Page");
-        TestSetup.getWebsite(BASE_URL);
-        website = TestSetup.getWebsite();
+        website = TestSetup.getWebsite(BASE_URL);
     }
 
     @And("I enter my name as {string}, email as {string}, subject as {string} and message as {string}")
@@ -45,7 +44,7 @@ public class ContactUsStepdefs {
 
     @Then("Your details have been submitted successfully is visible")
     public void yourDetailsHaveBeenSubmittedSuccessfullyIsVisible() {
-        MatcherAssert.assertThat(this.website.getContactUsPage().getAlertSuccessMessageText(), Matchers.containsString("Success!"));
+        MatcherAssert.assertThat(this.website.getContactUsPage().getAlertSuccessMessageText(), Matchers.equalTo("Success! Your details have been submitted successfully."));
     }
 
 }

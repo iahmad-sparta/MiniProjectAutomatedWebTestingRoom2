@@ -21,6 +21,7 @@ public class Website {
     private Cart cart;
     private Checkout checkout;
     private Payment payment;
+    private final ProductPage productPage;
 
     public Website(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -31,6 +32,7 @@ public class Website {
         cart = new Cart(webDriver);
         checkout =  new Checkout(webDriver);
         payment = new Payment(webDriver);
+        this.productPage = new ProductPage(webDriver);
     }
 
     public String getCurrentUrl() {
@@ -68,7 +70,7 @@ public class Website {
     public ContactUsPage getContactUsPage() {
         return contactUsPage;
     }
-    
+
     public LoginPage getLoginPage() {
         return loginPage;
     }
@@ -76,7 +78,7 @@ public class Website {
     public void goToPage(String URL) {
         webDriver.get(URL);
     }
-
-
-
+    public ProductPage getProductPage() {
+        return productPage;
+    }
 }

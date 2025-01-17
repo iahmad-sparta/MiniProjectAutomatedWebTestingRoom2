@@ -4,7 +4,7 @@
   This project utilises Cucumber, a bahviour-driven development, language to test [Automation Exercise ](https://automationexercise.com/) using the Selenium testing library. We model each webpage using a Page Object Model (POM). The goal of this group project was to improve our skills in Git collaboration, Selenium testing, Writing modular Java code and Bug defect reporting.   
 
 ## Using Git
- During the project, our group decided to use Git in a collaborative environment. We gave each member of our squad their own branch which were pulled, and pushed from the master branch. This Apprach was found to be effective due to the small member of merge conflicts, while we were developing test cases independent from one another.
+ During the project, our group decided to use Git in a collaborative environment. We gave each member of our squad their own branch which were pulled, and pushed from the master branch. This Approach was found to be effective due to the small member of merge conflicts, while we were developing test cases independent from one another.
  
 ### Our branches
 ![image](https://github.com/user-attachments/assets/f3da1725-0eb7-4965-bfc1-708ee1d07ff7)

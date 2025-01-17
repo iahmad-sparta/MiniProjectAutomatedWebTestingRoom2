@@ -10,6 +10,7 @@ import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import testproject.pages.Website;
 
+import java.io.File;
 import java.io.IOException;
 
 public class ContactUsStepdefs {

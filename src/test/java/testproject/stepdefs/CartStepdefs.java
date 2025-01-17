@@ -71,15 +71,6 @@ public class CartStepdefs {
 
     @Then("I enter my payment details {string} {string} {string} {string} {string}")
     public void iEnterMyPaymentDetails(String name, String cardNumber, String expiryMonth, String expiryYear, String cvv) {
-        // enter details into boxes
-        /*
-        <input class="form-control" name="name_on_card" data-qa="name-on-card" required="" type="text">
-        <input name="card_number" data-qa="card-number" class="form-control card-number" required="" type="text">
-        <input name="cvc" data-qa="cvc" class="form-control card-cvc" required="" placeholder="ex. 311" type="text">
-        <input class="form-control card-expiry-month" name="expiry_month" data-qa="expiry-month" required="" placeholder="MM" type="text">
-        <input name="expiry_year" data-qa="expiry-year" class="form-control card-expiry-year" required="" placeholder="YYYY" type="text">
-
-         */
         website.getPayment().enterCard(name, cardNumber, expiryMonth, expiryYear, cvv);
 
     }

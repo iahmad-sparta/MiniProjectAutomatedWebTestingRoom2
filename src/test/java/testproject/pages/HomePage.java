@@ -31,11 +31,11 @@ public class HomePage {
         WebElement womenButton = webDriver.findElement(womenTag);
         womenButton.click();
     }
-    public void clickDress(){
+    public void clickDress() {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
         WebElement dressButton = wait.until(ExpectedConditions.visibilityOfElementLocated(dressTag));
         dressButton.click();
-
+    }
     public void clickProductsButton() {this.webDriver.findElement(this.productsButton).click();
     }
 

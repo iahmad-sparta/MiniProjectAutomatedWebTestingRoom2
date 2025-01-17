@@ -5,10 +5,12 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage {
 
-    private final WebDriver webDriver;
+    private WebDriver webDriver;
 
     private final By productsButton = By.cssSelector("a[href='/products']");
     private By loggedInAs = By.cssSelector(".navbar-nav > li:nth-child(10) > a:nth-child(1)");
+
+    private By logoutButton = new By.ByXPath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[4]/a");
 
     public HomePage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -19,5 +21,9 @@ public class HomePage {
     }
 
     public void clickProductsButton() {this.webDriver.findElement(this.productsButton).click();
+    }
+
+    public void clickLogoutButton() {
+        webDriver.findElement(logoutButton).click();
     }
 }

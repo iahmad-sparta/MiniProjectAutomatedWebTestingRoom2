@@ -39,6 +39,12 @@ Automated Web Testing
 │           └───features
 ```
 
+## Test Metrics
+In this project, we tested a number of features. These tests were priorities based on how urgent we found them using the MOSCOW method. 
+We found that the tests we created, all of them passed to a high degree. Attached is an example test case and the pass result from it.
+![image](https://github.com/user-attachments/assets/ecc95c66-0997-4070-b5cc-91dbb00e7f25)
+
+
 ## Acknowledgements
  This project was created by:
  - ik1g19

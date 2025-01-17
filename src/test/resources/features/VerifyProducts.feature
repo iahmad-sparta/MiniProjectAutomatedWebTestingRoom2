@@ -6,5 +6,5 @@ Feature:
   And I should see a list of products
 
   Scenario: Verify product details on the Products page
-  Given I am on the "Products" page
-  Then each product should display:
+  Given I am on the Products page
+  Then each product should display: Price, Add to Cart, Name, View Product, Image

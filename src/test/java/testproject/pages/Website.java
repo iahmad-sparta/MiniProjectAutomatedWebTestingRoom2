@@ -77,4 +77,7 @@ public class Website {
     public void goToPage(String URL) {
         webDriver.get(URL);
     }
+
+
+
 }

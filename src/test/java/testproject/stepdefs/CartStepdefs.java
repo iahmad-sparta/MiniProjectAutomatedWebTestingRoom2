@@ -4,6 +4,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import junit.framework.Assert;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
@@ -92,5 +93,8 @@ public class CartStepdefs {
     }
 
 
+    @When("I add products to the cart")
+    public void iAddProductsToTheCart() {
 
+    }
 }

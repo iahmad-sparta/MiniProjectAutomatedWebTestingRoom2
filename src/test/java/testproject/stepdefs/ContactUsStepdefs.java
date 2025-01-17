@@ -34,7 +34,8 @@ public class ContactUsStepdefs {
 
     @And("I upload a file from {string}.")
     public void iUploadAFileFrom(String arg0) {
-        this.website.getContactUsPage().uploadFile(arg0);
+        File file = new File(arg0);
+        this.website.getContactUsPage().uploadFile(file.getAbsolutePath());
     }
 
     @When("I click the Submit Button")

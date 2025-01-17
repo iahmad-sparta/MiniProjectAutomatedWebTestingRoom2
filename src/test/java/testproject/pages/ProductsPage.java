@@ -4,6 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
+
 public class ProductsPage {
 
     private final WebDriver webDriver;
@@ -34,6 +40,13 @@ public class ProductsPage {
         webDriver.findElement(firstProductViewButton).click();
     }
 
+
+    public String correctTitle(String expectedTitle) {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        WebElement title = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[@class='title text-center']")));
+
+        return title.getText();
+    }
     public boolean getProductDetails() {
         try {
             WebElement priceElement = webDriver.findElement(productPrice);
@@ -53,3 +66,5 @@ public class ProductsPage {
         }
     }
 }
+    
+

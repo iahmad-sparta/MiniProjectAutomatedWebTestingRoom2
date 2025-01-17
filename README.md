@@ -83,6 +83,8 @@ In this example screenshot we can see a structured test using the Cucumber langu
  - The website tries to render a product page with null data from the URL.
  - The website does not give an error for an unvalid product id.
  - The website does not give an error for an unvalid brand product id.
+ - When inputting the data into the payment form, it doesn’t validate the data to ensure incorrect data is sent. However the website still processes it and completes the order.
+ - When inputting an invalid email into the subscription box, the website doesn’t validate properly and gives a message pop up saying you have been subscribed.
 
 ## Acknowledgements
  This project was created by:

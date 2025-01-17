@@ -41,20 +41,21 @@ public class ProductsStepDefs {
         website = TestSetup.getWebsite(BASE_URL);
     }
 
-    @When("I click on the {string} link in the navigation menu")
-    public void iClickOnTheLinkInTheNavigationMenu(String linkText) {
-        website.findElement(By.xpath("//a[contains(text(), '" + linkText + "')]")).click();
+    @When("I click on the Products link in the navigation menu")
+    public void iClickOnTheLinkInTheNavigationMenu() {
+        website.getHomePage().clickProductsButton();
     }
 
-
-    @Then("I should be redirected to the {string} page")
-    public void iShouldBeRedirectedToThePage(String expectedPage) {
-        assertThat(website.getCurrentUrl().contains(expectedPage), is (true));
+    @Then("I should be redirected to the Products page")
+    public void iShouldBeRedirectedToThePage() {
+        assertThat(website.getCurrentUrl().contains("/products"), is (true));
     }
 
     @And("I should see a list of products")
     public void iShouldSeeAListOfProducts() {
-        assertThat (website.getProductsPage().isProductListVisible(), is(true));
+        assertThat(website.getProductsPage().isProductListVisible(), is(true));
     }
+    
+
 
 }

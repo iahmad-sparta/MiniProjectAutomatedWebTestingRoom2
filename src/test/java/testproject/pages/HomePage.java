@@ -5,8 +5,9 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage {
 
-    private WebDriver webDriver;
+    private final WebDriver webDriver;
 
+    private final By productsButton = By.cssSelector("a[href='/products']");
     private By loggedInAs = By.cssSelector(".navbar-nav > li:nth-child(10) > a:nth-child(1)");
 
     public HomePage(WebDriver webDriver) {
@@ -15,5 +16,8 @@ public class HomePage {
 
     public String getLoggedInAs() {
         return webDriver.findElement(loggedInAs).getText();
+    }
+
+    public void clickProductsButton() {this.webDriver.findElement(this.productsButton).click();
     }
 }

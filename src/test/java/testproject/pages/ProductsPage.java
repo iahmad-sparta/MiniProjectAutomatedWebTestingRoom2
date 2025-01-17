@@ -2,10 +2,12 @@ package testproject.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class ProductsPage {
 
     private final WebDriver webDriver;
+
 
     public ProductsPage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -26,4 +28,7 @@ public class ProductsPage {
     public void clickFirstProductViewButton() {
         webDriver.findElement(firstProductViewButton).click();
     }
+
+
+
 }

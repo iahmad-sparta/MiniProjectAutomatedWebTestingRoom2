@@ -22,7 +22,7 @@
 ```
 git clone https://github.com/iahmad-sparta/MiniProjectAutomatedWebTestingRoom2.git
 ```
-### Example dummy user:
+### Example Dummy User:
 ```
 email address = "ziinkgaming8@gmail.com"
 password = "test"
@@ -66,7 +66,7 @@ We found that the tests we created, all of them passed to a high degree. Attache
 
 ![image](https://github.com/iahmad-sparta/MiniProjectAutomatedWebTestingRoom2/blob/master/src/test/resources/data/testMetrics.png?raw=true)
 
-In this example screenshot we can see a structured test using the Cucumber language. With all the steps passing in a runtime of 5.1 seconds, we can see our approach is efficient and effective.
+In this example screenshot we can see a structured test using the Cucumber language. With all the steps passing in a runtime of 1 minute 45 seconds, we can see our approach is efficient and effective.
 
 ## Defects
  The following defects were found with exploratory testing:

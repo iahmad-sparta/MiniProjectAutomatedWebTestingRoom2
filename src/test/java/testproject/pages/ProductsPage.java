@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class ProductsPage {
 
     private final WebDriver webDriver;
@@ -20,6 +22,10 @@ public class ProductsPage {
     private final By productCategory = By.cssSelector(".productinfo.text-center p");
     private final By productAddToCartButton= By.cssSelector(".productinfo.text-center a.add-to-cart");
     private final By productImage = By.cssSelector(".productinfo.text-center img");
+
+    private final By searchBox = By.cssSelector("#search_product");
+    private final By searchButton = By.cssSelector("#submit_search");
+    private final By searchResults = By.cssSelector(".features_items .productinfo.text-center");
 
 
     public String getProductsHeaderText() {
@@ -51,5 +57,25 @@ public class ProductsPage {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public void searchProducts(String searchText) {
+        WebElement searchInputElement = webDriver.findElement(searchBox);
+        searchInputElement.clear();
+        searchInputElement.sendKeys(searchText);
+    }
+
+    public void clickSearchButton(){
+        webDriver.findElement(searchButton).click();
+    }
+
+    public boolean verifySearchResults(String searchTerm) {
+        List<WebElement> results = webDriver.findElements(searchResults);
+        for (WebElement result : results) {
+            if (!result.getText().toLowerCase().contains(searchTerm.toLowerCase())) {
+                return false;
+            }
+        }
+        return true;
     }
 }

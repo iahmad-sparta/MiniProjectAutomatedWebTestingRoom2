@@ -38,10 +38,11 @@ Feature: Cart
 
   Scenario Outline: A user is placing an order after they have logged in
 
-  //Given I am on the Signup/Login button
-  //And I have filled the email and password in
-  //And I click the login button
-  //When I add products to the cart
+    Given I am on the Login Page
+    And I enter the email address "ziinkgaming8@gmail.com"
+    And I enter the password "test"
+    And I click the Login Button
+    When I add products to the cart
     And I click the checkout button
     And I verify details "<name>" "<address>" "<postcode>" "<country>" "<phone>"
     And I click place order

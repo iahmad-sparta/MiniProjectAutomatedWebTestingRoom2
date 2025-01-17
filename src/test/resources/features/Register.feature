@@ -3,7 +3,7 @@ Feature: Register
   Background:
     Given I am on the Login Page
       And I enter the name "tester"
-      And I enter the email "test7@sky.com"
+      And I enter the email "test8@sky.com"
     When I click Signup
     Then I go to the Signup Page
 

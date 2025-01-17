@@ -22,7 +22,11 @@
 ```
 git clone https://github.com/iahmad-sparta/MiniProjectAutomatedWebTestingRoom2.git
 ```
-
+### Example dummy user:
+```
+email address = "ziinkgaming8@gmail.com"
+password = "test"
+```
 
 ## Project Structure
 ```

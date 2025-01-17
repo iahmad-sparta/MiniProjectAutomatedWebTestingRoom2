@@ -53,14 +53,19 @@ public class LoginStepdefs {
 
     @Given("I am logged in")
     public void iAmLoggedIn() {
-
+        website = TestSetup.getWebsite(BASE_URL + "login");
+        website.getLoginPage().enterEmailLogin("test2@sky.com");
+        website.getLoginPage().enterPassword("password");
+        website.getLoginPage().clickLoginButton();
     }
 
     @When("I click the Logout Button")
     public void iClickTheLogoutButton() {
+        website.getHomePage().clickLogoutButton();
     }
 
     @Then("I should be logged out")
     public void iShouldBeLoggedOut() {
+        MatcherAssert.assertThat(website.getCurrentUrl(), Matchers.containsString("login"));
     }
 }

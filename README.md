@@ -1,7 +1,7 @@
 # Automated Web Testing
 
 ## Description
-  This project utilises Cucumber, a bahviour-driven development, language to test a website using the Selenium testing library. We model each webpage using a PAge Object Model (POM).   
+  This project utilises Cucumber, a bahviour-driven development, language to test a website using the Selenium testing library. We model each webpage using a Page Object Model (POM). The goal of this group project was to improve our skills in Git collaboration, Selenium testing, Writing modular Java code and Bug defect reporting.   
 
 ## Features
  List of features:  

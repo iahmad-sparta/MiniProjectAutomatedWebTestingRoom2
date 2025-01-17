@@ -89,6 +89,7 @@ public class RegisterStepdefs {
 
     @When("I click Create Account")
     public void iClickCreateAccount() {
+        registerPage = website.getRegisterPage();
         registerPage.clickRegister();
     }
 
@@ -97,5 +98,11 @@ public class RegisterStepdefs {
         String url = TestSetup.getWebsite().getCurrentUrl();
         MatcherAssert.assertThat(url, Matchers.containsString("account_created"));
         TestSetup.getWebsite(BASE_URL).getHomePage().clickDeleteAccount();
+    }
+
+    @Then("The email address is already in use")
+    public void theEmailAddressIsAlreadyInUse() {
+        String error = website.getLoginPage().getRegisterErrorMessage();
+        MatcherAssert.assertThat(error, Matchers.containsString("Email Address already exist!"));
     }
 }

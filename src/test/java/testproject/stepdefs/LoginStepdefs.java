@@ -56,4 +56,10 @@ public class LoginStepdefs {
     public void iShouldBeLoggedOut() {
         MatcherAssert.assertThat(website.getCurrentUrl(), Matchers.containsString("login"));
     }
+
+    @Then("The email or password is incorrect")
+    public void theEmailOrPasswordIsIncorrect() {
+        String error = website.getLoginPage().getLoginErrorMessage();
+        MatcherAssert.assertThat(error, Matchers.containsString("Your email or password is incorrect!"));
+    }
 }

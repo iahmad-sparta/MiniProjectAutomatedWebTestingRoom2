@@ -7,6 +7,8 @@ Feature: Register
     When I click Signup
     Then I go to the Signup Page
 
+
+
   Scenario: Registering a New User
     Given I am on the Singup Page
     And I fill in the personal information

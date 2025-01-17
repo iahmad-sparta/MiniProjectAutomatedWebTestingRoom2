@@ -68,6 +68,11 @@ We found that the tests we created, all of them passed to a high degree. Attache
 
 In this example screenshot we can see a structured test using the Cucumber language. With all the steps passing in a runtime of 5.1 seconds, we can see our approach is efficient and effective.
 
+## Defects
+ The following defects were found with exploratory testing:
+ - The website tries to render a product page with null data from the URL.
+ - The website does not give an error for an unvalid product id.
+ - The website does not give an error for an unvalid brand product id.
 
 ## Acknowledgements
  This project was created by:

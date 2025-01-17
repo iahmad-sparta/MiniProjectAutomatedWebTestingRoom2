@@ -29,6 +29,11 @@ public class Cart {
         return !products.isEmpty();
     }
 
+    public int getProductCount() {
+        List<WebElement> products = webDriver.findElements(productRows);
+        return products.size();
+    }
+
     public void clickProceedToCheckOutButton() {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
         WebElement proceedToCheckoutButton = wait.until(ExpectedConditions.elementToBeClickable(proceedToCheckoutButtonLocator));

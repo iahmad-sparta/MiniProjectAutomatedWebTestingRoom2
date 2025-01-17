@@ -97,6 +97,7 @@ public class RegisterStepdefs {
     public void theAccountHasBeenCreated() {
         String url = TestSetup.getWebsite().getCurrentUrl();
         MatcherAssert.assertThat(url, Matchers.containsString("account_created"));
+        TestSetup.getWebsite(BASE_URL).getHomePage().clickDeleteAccount();
     }
 
     @Then("The email address is already in use")

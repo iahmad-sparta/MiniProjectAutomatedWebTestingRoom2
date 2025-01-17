@@ -13,6 +13,7 @@ public class HomePage {
     private WebDriver webDriver;
 
     private final By productsButton = By.cssSelector("a[href='/products']");
+    private final By cartsButton = By.cssSelector("a[href='/view_cart']");
     private By loggedInAs = By.cssSelector(".navbar-nav > li:nth-child(10) > a:nth-child(1)");
     private By womenTag = By.xpath("//a[@href='#Women']");
     private By dressTag = By.xpath("//a[@href='/category_products/1']");
@@ -38,6 +39,9 @@ public class HomePage {
     }
     public void clickProductsButton() {this.webDriver.findElement(this.productsButton).click();
     }
+
+    public void clickCartsButton() {this.webDriver.findElement(this.cartsButton).click();}
+
 
     public void clickLogoutButton() {
         webDriver.findElement(logoutButton).click();

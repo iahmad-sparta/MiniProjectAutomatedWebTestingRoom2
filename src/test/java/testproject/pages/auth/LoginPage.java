@@ -14,6 +14,9 @@ public class LoginPage {
     private By emailFieldSignup = By.cssSelector("[data-qa='signup-email']");
     private By signUpButton = By.cssSelector("[data-qa='signup-button']");
 
+    private By registerError = new By.ByXPath("//*[@id=\"form\"]/div/div/div[3]/div/form/p");
+    private By loginError = new By.ByXPath("//*[@id=\"form\"]/div/div/div[1]/div/form/p");
+
 
     public LoginPage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -42,6 +45,14 @@ public class LoginPage {
 
     public void clickSignUpButton() {
         webDriver.findElement(signUpButton).click();
+    }
+
+    public String getRegisterErrorMessage() {
+        return webDriver.findElement(registerError).getText();
+    }
+
+    public String getLoginErrorMessage() {
+        return webDriver.findElement(loginError).getText();
     }
 
 }

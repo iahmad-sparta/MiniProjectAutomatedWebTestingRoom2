@@ -36,7 +36,7 @@ public class LoginStepdefs {
 
     @Then("Logged in as Username is visible")
     public void loggedInAsUsernameIsVisible() {
-        MatcherAssert.assertThat(website.getHomePage().getLoggedInAs(), Matchers.containsString("robert"));
+        MatcherAssert.assertThat(website.getHomePage().getLoggedInAs(), Matchers.containsString("Robert"));
     }
 
     @Given("I am logged in")
@@ -55,5 +55,11 @@ public class LoginStepdefs {
     @Then("I should be logged out")
     public void iShouldBeLoggedOut() {
         MatcherAssert.assertThat(website.getCurrentUrl(), Matchers.containsString("login"));
+    }
+
+    @Then("The email or password is incorrect")
+    public void theEmailOrPasswordIsIncorrect() {
+        String error = website.getLoginPage().getLoginErrorMessage();
+        MatcherAssert.assertThat(error, Matchers.containsString("Your email or password is incorrect!"));
     }
 }

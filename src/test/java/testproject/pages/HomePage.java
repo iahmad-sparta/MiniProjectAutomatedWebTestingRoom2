@@ -8,6 +8,12 @@ public class HomePage {
     private WebDriver webDriver;
 
     private By loggedInAs = By.cssSelector(".navbar-nav > li:nth-child(10) > a:nth-child(1)");
+    private By viewProduct = By.cssSelector("div.choose a[href='/product_details/1']");
+    private By viewBrand = By.cssSelector("div.brands-name a[href='/brand_products/Polo']");
+    private By viewCategory = By.cssSelector("div#women a[href='/category_products/1']");
+    private By addToCart = By.className("add-to-cart");
+    private By subscribeForm = new By.ById("subscribe_email");
+    private By subscribeButton = new By.ById("subscribe_button");
 
     public HomePage(WebDriver webDriver) {
         this.webDriver = webDriver;

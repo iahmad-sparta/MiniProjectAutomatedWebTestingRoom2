@@ -29,7 +29,11 @@ public class Cart {
         return !products.isEmpty();
     }
 
-
+    public void clickProceedToCheckOutButton() {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        WebElement proceedToCheckoutButton = wait.until(ExpectedConditions.elementToBeClickable(proceedToCheckoutButtonLocator));
+        proceedToCheckoutButton.click();
+    }
 
 
 }

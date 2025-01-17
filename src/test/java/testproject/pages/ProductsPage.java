@@ -2,17 +2,19 @@ package testproject.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class ProductsPage {
 
     private final WebDriver webDriver;
+
 
     public ProductsPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
     private final By productsHeader = By.cssSelector("h2.title.text-center");
-    private final By productList = By.cssSelector(".product-container");
+    private final By productList = By.cssSelector(".features_items");
     private final By firstProductViewButton = By.cssSelector("a[href='/product_details/1']");
 
     public String getProductsHeaderText() {
@@ -26,4 +28,7 @@ public class ProductsPage {
     public void clickFirstProductViewButton() {
         webDriver.findElement(firstProductViewButton).click();
     }
+
+
+
 }

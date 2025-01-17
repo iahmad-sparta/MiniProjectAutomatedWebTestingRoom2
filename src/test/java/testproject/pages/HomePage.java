@@ -14,6 +14,7 @@ public class HomePage {
     private By addToCart = By.className("add-to-cart");
     private By subscribeForm = new By.ById("subscribe_email");
     private By subscribeButton = new By.ById("subscribe_button");
+    private By deleteAccountButton = By.cssSelector("ul.nav a[href='/delete_account']");
 
     public HomePage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -21,5 +22,9 @@ public class HomePage {
 
     public String getLoggedInAs() {
         return webDriver.findElement(loggedInAs).getText();
+    }
+
+    public void clickDeleteAccount() {
+        webDriver.findElement(this.deleteAccountButton).click();
     }
 }

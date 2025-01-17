@@ -31,7 +31,6 @@ public class Website {
         cart = new Cart(webDriver);
         checkout =  new Checkout(webDriver);
         payment = new Payment(webDriver);
-
     }
 
     public String getCurrentUrl() {

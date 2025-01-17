@@ -17,19 +17,19 @@ public class ContactUsStepdefs {
     private Website website;
     private static final String BASE_URL = "https://automationexercise.com/contact_us";
 
-//    @Before
-//    public void setup() throws IOException {
-//        TestSetup.startChromeService();
-//        TestSetup.createWebDriver();
-//
-//        website = TestSetup.getWebsite(BASE_URL);
-//    }
-//
-//    @After
-//    public void afterEach() {
-//        TestSetup.quitWebDriver();
-//        TestSetup.stopService();
-//    }
+    @Before
+    public void setup() throws IOException {
+        TestSetup.startChromeService();
+        TestSetup.createWebDriver();
+
+        website = TestSetup.getWebsite(BASE_URL);
+    }
+
+    @After
+    public void afterEach() {
+        TestSetup.quitWebDriver();
+        TestSetup.stopService();
+    }
 
     @Given("I am on the Contact Us Page.")
     public void iAmOnTheContactUsPage()

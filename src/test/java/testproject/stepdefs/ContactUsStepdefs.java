@@ -17,25 +17,11 @@ public class ContactUsStepdefs {
     private Website website;
     private static final String BASE_URL = "https://automationexercise.com/contact_us";
 
-//    @Before
-//    public void setup() throws IOException {
-//        TestSetup.startChromeService();
-//        TestSetup.createWebDriver();
-//
-//        website = TestSetup.getWebsite(BASE_URL);
-//    }
-//
-//    @After
-//    public void afterEach() {
-//        TestSetup.quitWebDriver();
-//        TestSetup.stopService();
-//    }
-
     @Given("I am on the Contact Us Page.")
     public void iAmOnTheContactUsPage()
     {
         System.out.println("I am on the Contact Us Page");
-        TestSetup.getWebsite(BASE_URL);
+        website = TestSetup.getWebsite(BASE_URL);
     }
 
     @And("I enter my name as {string}, email as {string}, subject as {string} and message as {string}")
@@ -58,7 +44,7 @@ public class ContactUsStepdefs {
 
     @Then("Your details have been submitted successfully is visible")
     public void yourDetailsHaveBeenSubmittedSuccessfullyIsVisible() {
-        MatcherAssert.assertThat(this.website.getContactUsPage().getAlertSuccessMessageText(), Matchers.containsString("Success!"));
+        MatcherAssert.assertThat(this.website.getContactUsPage().getAlertSuccessMessageText(), Matchers.equalTo("Success! Your details have been submitted successfully."));
     }
 
 }

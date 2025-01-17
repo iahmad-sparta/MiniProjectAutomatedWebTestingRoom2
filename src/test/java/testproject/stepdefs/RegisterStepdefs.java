@@ -23,6 +23,7 @@ public class RegisterStepdefs {
     public void setup() throws IOException {
         TestSetup.startChromeService();
         TestSetup.createWebDriver();
+        website = TestSetup.getWebsite();
     }
 
     @After

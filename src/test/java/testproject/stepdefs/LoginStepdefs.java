@@ -17,18 +17,6 @@ public class LoginStepdefs {
     private Website website;
     private static final String BASE_URL = "https://automationexercise.com/";
 
-//    @Before
-//    public void setup() throws IOException {
-//        TestSetup.startChromeService();
-//        TestSetup.createWebDriver();
-//    }
-//
-//    @After
-//    public void afterEach() {
-//        TestSetup.quitWebDriver();
-//        TestSetup.stopService();
-//    }
-
     @And("I enter the email address {string}")
     public void iEnterTheEmailAddress(String arg0) {
 //        website = TestSetup.getWebsite(BASE_URL + "login");

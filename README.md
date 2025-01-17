@@ -11,7 +11,7 @@
 
 When delegating tasks, we discussed what each squad member was to do in the next hour. After this hour, we discussed progress and what could be developed next. With everyone having their own branch, we could see progress on our local machines.
 
-This project also used git committs and merging. The use of commits allowed everyone to see what progress was made to what code, while the use of merging allowed components to be integrated with one another. At the end of this project, all branches were able to merged into master with no conflicts showing how our collaborative approach was a success.
+This project also used git commits and merging. The use of commits allowed everyone to see what progress was made to what code, while the use of merging allowed components to be integrated with one another. At the end of this project, all branches were able to merged into master with no conflicts showing how our collaborative approach was a success.
 
 ## Features
  List of features:  

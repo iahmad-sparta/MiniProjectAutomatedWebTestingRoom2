@@ -1,7 +1,7 @@
 # Automated Web Testing
 
 ## Description
-  This project utilises Cucumber, a bahviour-driven development, language to test a website using the Selenium testing library. We model each webpage using a Page Object Model (POM). The goal of this group project was to improve our skills in Git collaboration, Selenium testing, Writing modular Java code and Bug defect reporting.   
+  This project utilises Cucumber, a bahviour-driven development, language to test [Automation Exercise ](https://automationexercise.com/) using the Selenium testing library. We model each webpage using a Page Object Model (POM). The goal of this group project was to improve our skills in Git collaboration, Selenium testing, Writing modular Java code and Bug defect reporting.   
 
 ## Features
  List of features:  
@@ -15,8 +15,8 @@
  - Maven
  - Junit (Version 3.8.1)
  - Selenium (Version 4.22.0)
- - Cucumber (7.18.0)
- - Hamcrest (2.2)
+ - Cucumber (Version 7.18.0)
+ - Hamcrest (Version 2.2)
 
 ## Setup
 ```
@@ -41,6 +41,9 @@ Automated Web Testing
 │       │       └───stepdefs  
 │       └───resources  
 │           └───features
+├───.gitignore
+├───pom.xml
+└───README.md
 ```
 ## What was Tested?
  In this project, we tested the following user stories:
@@ -54,6 +57,8 @@ Automated Web Testing
 - User Story 14: Place Order
 - User Story 18: View Category Products
 - User Story 27: Delete Account
+
+We organised our test cases using the GitHub Project board.
 
 ## Test Metrics
 In this project, we tested a number of features. These tests were priorities based on how urgent we found them using the MOSCOW method. 

@@ -2,6 +2,11 @@ package testproject.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ProductsPage {
 
@@ -25,5 +30,12 @@ public class ProductsPage {
 
     public void clickFirstProductViewButton() {
         webDriver.findElement(firstProductViewButton).click();
+    }
+
+    public String correctTitle(String expectedTitle) {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        WebElement title = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[@class='title text-center']")));
+
+        return title.getText();
     }
 }

@@ -24,18 +24,6 @@ public class ProductsStepDefs {
     public HomePage homePage;
     private static final String BASE_URL = "https://automationexercise.com/";
 
-    @Before
-    public void setup() throws IOException {
-        TestSetup.startChromeService();
-        TestSetup.createWebDriver();
-    }
-
-    @After
-    public void afterEach(){
-        TestSetup.quitWebDriver();
-        TestSetup.stopService();
-    }
-
     @Given("I am on the homepage")
     public void iAmOnTheHomepage() {
         website = TestSetup.getWebsite(BASE_URL);

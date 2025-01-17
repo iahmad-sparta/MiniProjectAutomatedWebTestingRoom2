@@ -16,18 +16,6 @@ public class CartStepdefs {
     private static String BASE_URL = "https://automationexercise.com/";
     private Website website;
 
-    @Before
-    public void setup() throws IOException {
-        TestSetup.startChromeService();
-        TestSetup.createWebDriver();
-    }
-
-    @After
-    public void afterEach(){
-        TestSetup.quitWebDriver();
-        TestSetup.stopService();
-    }
-
     @And("I click the cart button")
     public void iClickTheCartButton() {
         // mock setup

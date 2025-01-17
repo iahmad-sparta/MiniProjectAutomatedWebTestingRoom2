@@ -30,7 +30,6 @@ public class RegisterStepdefs {
 
     @Given("I am on the Login Page")
     public void iAmOnTheLoginPage() {
-
         this.website = TestSetup.getWebsite(BASE_URL + "login");
     }
 
@@ -41,7 +40,7 @@ public class RegisterStepdefs {
 
     @And("I enter the email {string}")
     public void iEnterTheEmail(String arg0) {
-        website.getLoginPage().enterEmailLogin(arg0);
+        website.getLoginPage().enterEmailSignup(arg0);
     }
 
     @When("I click Signup")
@@ -56,7 +55,7 @@ public class RegisterStepdefs {
 
     @Given("I am on the Singup Page")
     public void iAmOnTheSingupPage() {
-        this.website = TestSetup.getWebsite(BASE_URL + "signup");
+//        this.website = TestSetup.getWebsite(BASE_URL + "signup");
     }
 
     @And("I fill in the personal information")

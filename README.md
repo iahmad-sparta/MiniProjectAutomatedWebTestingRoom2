@@ -38,11 +38,26 @@ Automated Web Testing
 │       └───resources  
 │           └───features
 ```
+## What was Tested?
+ In this project, we tested the following user stories:
+- User Story 1: Register a User
+- User Story 2: Login User with Correct Email and Password
+- User Story 6: Contact Us Form
+- User Story 8: Verify all Products and Product detail page
+- User Story 9: Search for a product
+- User Story 12: Add Products in cart
+- User Story 13: Verify Product quantity in Cart
+- User Story 14: Place Order
+- User Story 18: View Category Products
+- User Story 27: Delete Account
 
 ## Test Metrics
 In this project, we tested a number of features. These tests were priorities based on how urgent we found them using the MOSCOW method. 
 We found that the tests we created, all of them passed to a high degree. Attached is an example test case and the pass result from it.
+
 ![image](https://github.com/user-attachments/assets/ecc95c66-0997-4070-b5cc-91dbb00e7f25)
+
+In this example screenshot we can see a structured test using the Cucumber language. With all the steps passing in a runtime of 5.1 seconds, we can see our approach is efficient and effective.
 
 
 ## Acknowledgements

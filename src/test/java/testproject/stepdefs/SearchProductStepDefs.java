@@ -20,7 +20,6 @@ public class SearchProductStepDefs {
 
     @Before
     public void setup() throws IOException {
-        TestSetup.startChromeService();
         TestSetup.createWebDriver();
     }
 

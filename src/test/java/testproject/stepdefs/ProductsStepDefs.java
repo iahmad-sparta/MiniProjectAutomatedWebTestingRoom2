@@ -14,7 +14,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ProductsStepDefs {
 
     public Website website;
-    public HomePage homePage;
     private static final String BASE_URL = "https://automationexercise.com/";
 
     @Given("I am on the homepage")
